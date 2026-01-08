@@ -30,6 +30,9 @@ vim.keymap.set("n", "<leader>p", function()
 end, { desc = "Mostrar diagnóstico da linha" })
 
 -- Keymaps
+vim.keymap.set({ "n", "v" }, "<leader>ca", function()
+	vim.lsp.buf.code_action()
+end, { desc = "Menu de Ações de Código (Code Actions)" })
 vim.keymap.set("n", "<leader>p", vim.diagnostic.open_float, { desc = "Mostrar erro" })
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Erro anterior" })
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Próximo erro" })

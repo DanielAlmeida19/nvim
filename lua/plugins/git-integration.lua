@@ -35,11 +35,11 @@ return {
 				end, { expr = true })
 
 				-- Stage/reset
-				map("n", "<leader>hs", gs.stage_hunk)
-				map("n", "<leader>hr", gs.reset_hunk)
+				map("n", "<leader>ds", gs.stage_hunk)
+				map("n", "<leader>dr", gs.reset_hunk)
 
 				-- Preview
-				map("n", "<leader>hp", gs.preview_hunk)
+				map("n", "<leader>dp", gs.preview_hunk)
 
 				-- Toggle
 				map("n", "<leader>gt", ":Gitsigns toggle_signs<CR>")
