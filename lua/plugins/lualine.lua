@@ -7,31 +7,26 @@ return {
 			options = {
 				theme = "auto",
 				-- component_separators = { left = "", right = "" },
-				-- section_separators   = { left = "", right = "" },
-				component_separators = { left = "│", right = "│" },
+				-- section_separators = { left = "", right = "" },
+				component_separators = { left = "", right = "" },
 				section_separators = { left = "", right = "" },
 				globalstatus = true,
 			},
 			ignore_ft = { "neo-tree" },
 			sections = {
 				-- lado esquerdo
-				lualine_a = { "mode" },
+				lualine_a = { { "mode", icon = " " } },
 				lualine_b = {
-					{
-						function()
-							return vim.fn.fnamemodify(vim.fn.getcwd(), ":t") -- nome do projeto
-						end,
-						icon = "",
-					},
 					"branch",
 					{
 						"diff",
 						colored = true,
-						symbols = { added = "+", modified = "~", removed = "-" },
+						symbols = { added = " ", modified = " ", removed = " " },
 					},
 				},
 				lualine_c = {
-					{ "filename", path = 0 }, -- só o nome do arquivo, separado
+					{ "filetype", icon_only = true },
+					{ "filename", path = 0, icon_enabled = true }, -- só o nome do arquivo, separado
 					{
 						"diagnostics",
 						sources = { "nvim_diagnostic" },
@@ -48,22 +43,16 @@ return {
 
 				-- lado direito
 				lualine_x = {
-					"filetype",
-					{
-						function()
-							return vim.loop.os_uname().sysname
-						end,
-						icon = "",
-					},
+					{ "lsp_status", icons_enabled = false },
 				},
-				lualine_y = { "location" },
-				lualine_z = {},
+				lualine_y = { "progress" },
+				lualine_z = { { "location", icon = "" } },
 			},
 			inactive_sections = {
 				lualine_a = {},
 				lualine_b = {},
-				lualine_c = { "filename" },
-				lualine_x = { "location" },
+				-- lualine_c = { "filename" },
+				-- lualine_x = { "location" },
 				lualine_y = {},
 				lualine_z = {},
 			},
