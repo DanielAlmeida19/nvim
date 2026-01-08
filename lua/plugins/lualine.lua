@@ -12,21 +12,36 @@ return {
 				section_separators = { left = "", right = "" },
 				globalstatus = true,
 			},
-			ignore_ft = { "neo-tree" },
+			ignore_ft = { "neo-tree", "trouble" },
 			sections = {
 				-- lado esquerdo
 				lualine_a = { { "mode", icon = " " } },
 				lualine_b = {
-					"branch",
+					{
+						"branch",
+						on_click = function()
+							Snacks.picker.git_branches()
+						end,
+					},
 					{
 						"diff",
 						colored = true,
 						symbols = { added = " ", modified = " ", removed = " " },
+						on_click = function()
+							Snacks.picker.git_diff()
+						end,
 					},
 				},
 				lualine_c = {
-					{ "filetype", icon_only = true },
-					{ "filename", path = 0, icon_enabled = true }, -- só o nome do arquivo, separado
+					{ "filetype", icon_only = false, padding = { left = 1, right = 0 } },
+					{
+						"filename",
+						path = 0,
+						icon_enabled = true,
+						on_click = function()
+							Snacks.picker.files()
+						end,
+					}, -- só o nome do arquivo, separado
 					{
 						"diagnostics",
 						sources = { "nvim_diagnostic" },
@@ -38,6 +53,9 @@ return {
 							hint = "󰌵 ",
 							info = " ",
 						},
+						on_click = function()
+							require("trouble").toggle({ mode = "diagnostics", focus = false })
+						end,
 					},
 				},
 
