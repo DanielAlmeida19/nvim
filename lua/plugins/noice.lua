@@ -14,7 +14,7 @@ return {
 		},
 		presets = {
 			bottom_search = true, -- usa uma barra de busca na parte inferior
-			command_palette = true, -- posiciona a linha de comando no centro
+			command_palette = false, -- posiciona a linha de comando no centro
 			long_message_to_split = true, -- mensagens longas vão para um split
 			inc_rename = false, -- habilita interface para o inc-rename.nvim
 			lsp_doc_border = true, -- adiciona borda para documentação do LSP

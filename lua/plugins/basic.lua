@@ -81,15 +81,15 @@ return {
 			--   })
 			-- end, { desc = "Abrir navegador de arquivos" })
 			-- Abre o file browser automaticamente quando o Neovim inicia
-			vim.api.nvim_create_autocmd("VimEnter", {
-				callback = function()
-					if vim.fn.argc() == 0 then
-						vim.schedule(function()
-							vim.cmd("Telescope file_browser path=%:p:h select_buffer=true hidden=true grouped=true")
-						end)
-					end
-				end,
-			})
+			-- vim.api.nvim_create_autocmd("VimEnter", {
+			-- 	callback = function()
+			-- 		if vim.fn.argc() == 0 then
+			-- 			vim.schedule(function()
+			-- 				vim.cmd("Telescope file_browser path=%:p:h select_buffer=true hidden=true grouped=true")
+			-- 			end)
+			-- 		end
+			-- 	end,
+			-- })
 		end,
 	},
 }

@@ -23,10 +23,11 @@ return {
 
 		vim.cmd.colorscheme("catppuccin")
 		vim.opt.number = true
-		vim.opt.relativenumber = true
+		vim.opt.relativenumber = false
 		vim.o.cursorline = true
 		vim.o.cursorlineopt = "number"
 		vim.api.nvim_set_hl(0, "LineNr", { fg = "#6e738d" }) -- números normais
-		vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#c6a0f6", bold = true }) -- número da linha atual
+		vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#b7bdf8", bold = true }) -- número da linha atual
+		-- vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#c6a0f6", bold = true }) -- número da linha atual
 	end,
 }

@@ -60,6 +60,7 @@ return {
 			},
 			refresh = 50, -- refresh at most every 50ms
 		},
+		dashboard = {},
 	},
 	keys = {
 		-- explorer

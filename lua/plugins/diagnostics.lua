@@ -1,4 +1,3 @@
--- lua/plugins/tiny-inline-diagnostics.lua
 return {
 	{
 		"rachartier/tiny-inline-diagnostic.nvim",
