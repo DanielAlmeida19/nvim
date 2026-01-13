@@ -2,8 +2,8 @@ return {
 	"akinsho/bufferline.nvim",
 	dependencies = "nvim-tree/nvim-web-devicons",
 	config = function()
-		vim.keymap.set("n", "<leader>h", ":BufferLineCycleNext<CR>", { desc = "Próximo buffer" })
-		vim.keymap.set("n", "<leader>l", ":BufferLineCyclePrev<CR>", { desc = "Buffer anterior" })
+		vim.keymap.set("n", "<leader>l", ":BufferLineCycleNext<CR>", { desc = "Próximo buffer" })
+		vim.keymap.set("n", "<leader>h", ":BufferLineCyclePrev<CR>", { desc = "Buffer anterior" })
 
 		require("bufferline").setup({
 			options = {
